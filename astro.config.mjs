@@ -73,15 +73,6 @@ export default defineConfig({
             { label: 'Shortcuts', slug: 'reference/shortcuts' },
           ],
         },
-        {
-          label: 'Open Source',
-          items: [
-            { label: 'Local Development', slug: 'open-source/local-development' },
-            { label: 'Contributing', slug: 'open-source/contributing' },
-            { label: 'Security', slug: 'open-source/security' },
-            { label: 'License', slug: 'open-source/license' },
-          ],
-        },
       ],
     }),
   ],

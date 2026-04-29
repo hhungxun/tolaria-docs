@@ -44,16 +44,17 @@ Structure appears where it earns its keep.
 
 ## Capture
 
-Create notes quickly. Save links. Drop references into the vault. Use Inbox as a
-temporary landing zone rather than asking every new thought to be fully modeled.
+Create notes fast. Save links. Drop references into the vault. Treat the Inbox
+as a landing zone, not a filing cabinet — every new thought does not need to be
+fully modeled the moment it arrives.
 
 ## Clarify
 
 Review the Inbox on a cadence. For each note, decide:
 
-- Delete it because it no longer matters.
-- Archive it because it may matter later but does not need attention.
-- Keep it because it should connect to real work or knowledge.
+- **Delete** it because it no longer matters.
+- **Archive** it because it may matter later but does not need attention.
+- **Keep** it because it should connect to real work or knowledge.
 
 ## Connect
 
@@ -69,13 +70,94 @@ usually answer one of these questions:
 
 ## Commit
 
-Git makes the vault safer. Commits document how your thinking changed and make it
-possible to recover deleted or rewritten notes. AutoGit can automate routine
-checkpoints when you trust the flow.
+Git makes the vault safer. Commits document how your thinking changed and make
+it possible to recover deleted or rewritten notes. AutoGit can automate routine
+checkpoints once you trust the flow.
 
 ## Compound
 
 Compounding happens when old context becomes useful again. Saved views surface
 working sets. Search finds exact language. Relationships reveal neighborhoods.
-AI agents can read the same files and help transform context into plans, drafts,
+AI agents read the same files and help transform context into plans, drafts,
 decisions, or shipped work.
+
+## Example: A PhD Researcher Running a Literature Review
+
+Concrete walkthrough of the loop for a graduate student building a thesis on
+*spatial reasoning in large language models*.
+
+### 1. Capture
+
+During a Tuesday reading session the student finds three relevant items and
+captures each as a quick Inbox note — no folder, no type, no relationships:
+
+- A paper PDF dragged into the vault: `2024-vqa-spatial-bench.md` with the
+  abstract pasted in and `url:` set to the arXiv link.
+- A Twitter thread quote saved through the web clipper: `thread-spatial-tokens.md`.
+- A 30-second voice idea typed straight into a new note: *"Maybe attention heads
+  encode coarse vs fine spatial relations differently — check Olsson et al."*
+
+Total time: under 90 seconds. No decisions about where the notes belong.
+
+### 2. Clarify
+
+Friday afternoon, the student opens the Inbox and processes the week's 14 notes:
+
+- `thread-spatial-tokens.md` → **delete** (the thread mostly restated a known result).
+- Conference deadline screenshot → **archive** (useful later, no action now).
+- `2024-vqa-spatial-bench.md` and the voice idea → **keep**.
+
+### 3. Connect
+
+The two surviving notes get type and relationships in the Properties panel:
+
+```yaml
+# 2024-vqa-spatial-bench.md
+type: Source
+authors: ["Chen et al."]
+year: 2024
+related_to:
+  - "[[topic-spatial-reasoning-llms]]"
+  - "[[project-thesis-chapter-2]]"
+status: To read closely
+```
+
+```yaml
+# idea-attention-heads-spatial.md
+type: Evergreen
+related_to:
+  - "[[topic-spatial-reasoning-llms]]"
+  - "[[person-olsson-c]]"
+  - "[[project-thesis-chapter-2]]"
+```
+
+The Topic note `topic-spatial-reasoning-llms.md` already exists, so both notes
+join an existing neighborhood instead of starting a new island.
+
+### 4. Commit
+
+End of week, AutoGit commits the vault: `lit-review: add VQA spatial bench +
+attention-head hypothesis`. Two months later the student rewrites the
+hypothesis. Git keeps the original phrasing recoverable — useful when an
+advisor asks *"what did you originally think?"*.
+
+### 5. Compound
+
+A saved view `chapter-2-sources.yml` filters `type: Source` + `related_to:
+[[project-thesis-chapter-2]]` sorted by year. When drafting Chapter 2, the
+student opens that view, then asks the AI panel:
+
+> *"Read every note linked to `[[project-thesis-chapter-2]]`. Group findings by
+> claim. Flag contradictions and missing citations."*
+
+The agent reads Markdown + frontmatter + wikilinks directly. Six months of
+captured fragments turn into a structured outline in minutes — because the loop
+made the context legible to both the researcher and the AI.
+
+### How the Loop Adapts
+
+| Persona | Capture target | Clarify cadence | Compound output |
+| --- | --- | --- | --- |
+| **Undergrad student** | lecture notes, slides, problem-set ideas | end of each course week | exam revision view, summary essays |
+| **PhD researcher** | papers, quotes, hypotheses, advisor feedback | Friday review | thesis chapters, paper drafts, related-work tables |
+| **Independent researcher / writer** | reading highlights, interviews, datasets | Sunday review | essays, newsletters, talks |
