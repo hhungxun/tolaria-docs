@@ -1,0 +1,49 @@
+---
+title: Git and AutoGit
+description: Use Git history as durable memory for your knowledge base.
+sidebar:
+  order: 6
+sourceRefs:
+  - label: Starter AutoGit note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/autogit.md
+  - label: Git architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+lastReviewed: 2026-04-30
+---
+
+Git is how Tolaria makes knowledge work recoverable.
+
+## Manual Git
+
+When a vault is Git-backed, Tolaria can show changes, commit, push, pull, inspect
+history, and help resolve conflicts from inside the app.
+
+Use manual commits for meaningful units of work:
+
+- Finished a project planning pass.
+- Added source material.
+- Rewrote a procedure.
+- Archived a batch of notes.
+- Accepted or rejected AI edits.
+
+## AutoGit
+
+AutoGit is optional automation. When enabled, Tolaria can create commits and push
+changes after idle periods, app focus changes, or other safe checkpoints.
+
+AutoGit is useful when you want the safety of history without thinking about
+every commit. It should still be paired with review when changes matter.
+
+## Why Git Fits Notes
+
+Knowledge changes over time. Git records those changes as a timeline:
+
+- What did I know then?
+- When did this project change direction?
+- What did an AI agent edit?
+- Can I recover a deleted note?
+
+## Remote Choice
+
+Tolaria does not require a Tolaria-owned cloud. Use GitHub, GitLab, Gitea, a
+private server, or a local-only repository depending on your needs.

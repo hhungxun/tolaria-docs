@@ -1,0 +1,51 @@
+---
+title: Views
+description: Save filtered working sets as readable YAML files.
+sidebar:
+  order: 5
+sourceRefs:
+  - label: Starter saved view
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/views/active-projects.yml
+  - label: Saved view ADR
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/adr/0040-custom-views-yml-filter-engine.md
+lastReviewed: 2026-04-30
+---
+
+Views are saved filters. They let you return to the same working set without
+rebuilding a search every time.
+
+## Example
+
+```yaml
+name: Active Projects
+icon: kanban
+color: blue
+sort: modified:desc
+filters:
+  all:
+    - field: type
+      op: equals
+      value: Project
+    - field: status
+      op: equals
+      value: Active
+```
+
+## Where Views Live
+
+Views live in `views/*.yml` inside the vault. Because they are YAML files, they
+can be edited by Tolaria, by a text editor, or by an AI agent that understands the
+vault conventions.
+
+## Good Uses
+
+- Active projects.
+- Notes created or changed recently.
+- Writing ideas with status `Draft`.
+- People with a follow-up date.
+- Archived source notes for a specific topic.
+
+## Keep Views Focused
+
+A view should answer one recurring question. If a view becomes a dashboard with
+too many jobs, split it into smaller views.

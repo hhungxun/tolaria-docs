@@ -1,0 +1,44 @@
+---
+title: Sidebar
+description: Reference for Tolaria's primary navigation panel.
+sidebar:
+  order: 1
+sourceRefs:
+  - label: Sidebar starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/tolaria-sidebar.md
+  - label: Architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+lastReviewed: 2026-04-30
+---
+
+The sidebar is the first navigation layer in Tolaria.
+
+<figure className="product-shot">
+  <img src="/tolaria-docs/assets/starter/1776369786040-CleanShot_2026-04-16_at_22.02.51_2x.png" alt="Tolaria sidebar and view editor screenshot" />
+</figure>
+
+## Sections
+
+- **Inbox**: notes that have not been marked organized.
+- **All Notes**: every note in the active vault.
+- **Archive**: notes kept out of regular navigation.
+- **Favorites**: pinned notes that should stay close.
+- **Views**: saved YAML filters.
+- **Types**: note categories such as Project, Topic, Person, and Note.
+- **Folders**: filesystem folders inside the vault.
+
+## Type Navigation
+
+Clicking a type shows all notes with matching `type:` frontmatter. If the type
+has a type document in `type/`, Tolaria can use its icon, color, order, sort, and
+list display settings.
+
+## Folder Navigation
+
+Folders are available, but Tolaria treats them as secondary structure. Use them
+for filesystem organization, attachments, or specialized project areas.
+
+## Drag and Drop
+
+Dropping a note on a type changes its `type:` frontmatter. Dropping a note on a
+folder moves the file. Both operations keep the vault as ordinary files on disk.

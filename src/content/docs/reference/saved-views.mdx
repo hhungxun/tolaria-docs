@@ -1,0 +1,55 @@
+---
+title: Saved Views
+description: YAML syntax and conventions for Tolaria saved views.
+sidebar:
+  order: 9
+sourceRefs:
+  - label: Starter saved view
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/views/active-projects.yml
+  - label: Saved views ADR
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/adr/0095-saved-view-order-field.md
+lastReviewed: 2026-04-30
+---
+
+Saved views are YAML files in `views/`.
+
+## Minimal View
+
+```yaml
+name: Start here!
+icon: null
+color: null
+sort: property:onboarding:asc
+filters:
+  any:
+    - field: type
+      op: equals
+      value: Project
+    - field: related_to
+      op: contains
+      value: Tolaria
+```
+
+## Filters
+
+Use `all` when every condition must match. Use `any` when at least one condition
+can match. Nested groups allow more expressive filters.
+
+## Sort
+
+Examples:
+
+```yaml
+sort: modified:desc
+sort: title:asc
+sort: property:Priority:asc
+```
+
+## Sidebar Order
+
+Views can carry order metadata so they appear predictably in the sidebar.
+
+## Editing
+
+You can edit views through Tolaria, in a text editor, or with an AI agent. Keep
+the YAML readable and commit changes when a view becomes part of your workflow.

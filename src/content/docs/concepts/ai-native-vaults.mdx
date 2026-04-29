@@ -1,0 +1,45 @@
+---
+title: AI-Native Vaults
+description: Make your knowledge base understandable to local AI agents without giving up ownership.
+sidebar:
+  order: 7
+sourceRefs:
+  - label: AI starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/tolaria-ai.md
+  - label: AI architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+  - label: Starter AGENTS.md
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/AGENTS.md
+lastReviewed: 2026-04-30
+---
+
+An AI-native vault is a vault that local agents can understand without hidden
+application state.
+
+## Why Plain Files Help
+
+AI agents are strongest when context is inspectable. Markdown files, YAML
+frontmatter, wikilinks, and saved view YAML are easy for agents to read, search,
+summarize, and edit.
+
+## AGENTS.md
+
+The starter vault includes `AGENTS.md`, a guide that explains Tolaria conventions:
+
+- One Markdown note per file.
+- H1 is the preferred display title.
+- `type:` stores the note type.
+- Wikilinks define note connections.
+- `views/*.yml` stores saved views.
+- Kebab-case filenames keep links stable.
+
+## MCP and CLI Agents
+
+Tolaria can expose vault capabilities to supported CLI agents through its app
+integration. The exact agent list evolves, but current docs describe support
+paths for tools such as Claude Code, Codex CLI, OpenCode, Pi, and Gemini CLI.
+
+## Human Control
+
+AI-native does not mean AI-owned. Keep the vault in Git, review diffs, and commit
+changes intentionally.

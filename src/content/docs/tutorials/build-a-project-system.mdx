@@ -1,0 +1,71 @@
+---
+title: Build a Project System
+description: Model active work with Project notes, relationships, saved views, and Git history.
+sidebar:
+  order: 5
+sourceRefs:
+  - label: Starter project type
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/project.md
+  - label: Saved view example
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/views/active-projects.yml
+lastReviewed: 2026-04-30
+---
+
+A project system is a set of notes that tells you what is active, what is blocked,
+who is involved, and where supporting context lives.
+
+## Create Project Notes
+
+Start with a lightweight Project note:
+
+```yaml
+---
+type: Project
+status: Active
+related_to:
+  - "[[topic-name]]"
+belongs_to:
+  - "[[responsibility-name]]"
+---
+
+# Project Name
+
+## Outcome
+
+## Next actions
+
+## Notes
+```
+
+## Link Supporting Notes
+
+Use relationships instead of copying everything into the project note.
+
+- `belongs_to` can point to a responsibility, quarter, or larger initiative.
+- `related_to` can point to topics, people, or resources.
+- `has` can point to child notes when a project collects multiple artifacts.
+
+## Build an Active Projects View
+
+Saved views are useful when you want an always-current project list:
+
+```yaml
+name: Active Projects
+icon: kanban
+color: blue
+sort: modified:desc
+filters:
+  all:
+    - field: type
+      op: equals
+      value: Project
+    - field: status
+      op: equals
+      value: Active
+```
+
+## Commit Milestones
+
+Use Git commits to mark meaningful project changes: decisions, draft handoffs,
+major source additions, or a completed phase. History turns your project system
+into a record of how the work moved.

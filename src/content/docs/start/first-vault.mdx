@@ -1,0 +1,55 @@
+---
+title: Create Your First Vault
+description: Understand Tolaria vaults and choose the best starting option.
+sidebar:
+  order: 2
+sourceRefs:
+  - label: Starter vault repository
+    url: https://github.com/refactoringhq/tolaria-getting-started
+  - label: Starter vault local-only ADR
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/adr/0070-starter-vaults-local-first-with-explicit-remote-connection.md
+lastReviewed: 2026-04-30
+---
+
+A Tolaria vault is a folder of Markdown files with optional YAML frontmatter,
+attachments, saved views, and Git history. There is no database to export from.
+The files are the product.
+
+## Recommended Start
+
+Choose **Getting Started** in the welcome screen. Tolaria clones the public starter
+vault, removes its remotes, and opens a local-only copy for you to explore.
+
+That local-only behavior matters: you can edit, delete, and experiment without
+pushing changes back to the public starter repository. Add your own remote later
+from the bottom bar or command palette when you are ready.
+
+## Starting From Existing Notes
+
+If you already have Markdown files:
+
+1. Put them in a dedicated folder.
+2. Open the folder as a vault.
+3. Add frontmatter gradually rather than trying to model everything at once.
+4. Use types and relationships only where they help you find or reuse notes.
+
+## Vault Shape
+
+Most notes can live at the vault root:
+
+```text
+my-vault/
+  active-project.md
+  weekly-review.md
+  writing-topic.md
+  attachments/
+  type/
+  views/
+```
+
+The `type/` folder stores type definition notes. The `views/` folder stores saved
+view YAML files. Attachments can live in `attachments/`.
+
+## Next
+
+Open [First 10 Minutes](../first-10-minutes/) and use it as a checklist.

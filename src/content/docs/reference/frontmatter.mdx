@@ -1,0 +1,61 @@
+---
+title: Frontmatter
+description: YAML fields, conventions, relationships, and system properties.
+sidebar:
+  order: 8
+sourceRefs:
+  - label: Abstractions docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ABSTRACTIONS.md
+  - label: Starter AGENTS.md
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/AGENTS.md
+lastReviewed: 2026-04-30
+---
+
+Frontmatter is YAML at the top of a Markdown note.
+
+```yaml
+---
+type: Project
+status: Active
+url: https://example.com
+belongs_to:
+  - "[[responsibility-writing]]"
+related_to:
+  - "[[topic-markdown]]"
+aliases:
+  - Markdown project
+---
+```
+
+## Standard Fields
+
+| Field | Meaning |
+| --- | --- |
+| `type` | Note type shown in sidebar and lists. |
+| `status` | Lifecycle state. |
+| `url` | External link. |
+| `date` | Single date. |
+| `start_date`, `end_date` | Date range. |
+| `aliases` | Alternative names for wikilink resolution. |
+| `belongs_to`, `related_to`, `has` | Default relationship fields. |
+| `icon` | Per-note icon. |
+
+## Relationships
+
+Any field containing wikilinks is treated as a relationship:
+
+```yaml
+blocked_by:
+  - "[[project-api]]"
+reviewed_by:
+  - "[[person-lee]]"
+```
+
+## System Fields
+
+Fields beginning with `_` are system fields. They may store type icon, color,
+order, pinned properties, or other Tolaria-managed state.
+
+## Value Types
+
+Tolaria supports strings, numbers, booleans, lists, and null values through YAML.

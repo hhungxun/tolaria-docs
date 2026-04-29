@@ -1,0 +1,56 @@
+---
+title: Local Development
+description: Run the Tolaria app locally for contribution or source exploration.
+sidebar:
+  order: 1
+sourceRefs:
+  - label: Getting started docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/GETTING-STARTED.md
+  - label: Tolaria repository
+    url: https://github.com/refactoringhq/tolaria
+lastReviewed: 2026-04-30
+---
+
+Tolaria is built with Tauri, React, TypeScript, and Rust.
+
+## Prerequisites
+
+- Node.js 20 or newer.
+- pnpm.
+- Rust stable.
+- Git.
+- Linux WebKitGTK dependencies if developing on Linux.
+
+## Browser Mock Mode
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open the local Vite URL. Browser mode uses mock Tauri behavior and is useful for
+frontend work that does not require native APIs.
+
+## Native App Mode
+
+```bash
+pnpm tauri dev
+```
+
+Use native mode for filesystem, Git, menu, updater, window, and OS integration
+work.
+
+## Tests
+
+Common checks in the app repo include:
+
+```bash
+pnpm lint
+npx tsc --noEmit
+pnpm test
+cargo test
+pnpm playwright:smoke
+pnpm playwright:regression
+```
+
+Consult the app repository for the current full gate before contributing.

@@ -1,0 +1,59 @@
+---
+title: Relationships
+description: Model connections with wikilinks in frontmatter and Markdown body content.
+sidebar:
+  order: 4
+sourceRefs:
+  - label: Dynamic relationship ADR
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/adr/0010-dynamic-wikilink-relationship-detection.md
+  - label: Properties panel starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/the-properties-panel.md
+lastReviewed: 2026-04-30
+---
+
+Relationships turn a set of files into a navigable knowledge graph.
+
+## Wikilinks
+
+Use wikilinks in note bodies or frontmatter:
+
+```md
+This project depends on [[research-topic]] and [[person-alex]].
+```
+
+```yaml
+---
+belongs_to:
+  - "[[responsibility-writing]]"
+related_to:
+  - "[[topic-markdown]]"
+---
+```
+
+## Dynamic Relationship Fields
+
+Tolaria treats any frontmatter field containing wikilinks as a relationship. That
+means you can create domain-specific relationships without waiting for app changes.
+
+```yaml
+---
+reviewed_by:
+  - "[[person-sam]]"
+blocked_by:
+  - "[[project-api-migration]]"
+---
+```
+
+## Default Relationship Vocabulary
+
+These defaults cover many knowledge work cases:
+
+- `belongs_to`: parent or container.
+- `related_to`: lateral connection.
+- `has`: child or contained item.
+
+## Backlinks and Neighborhoods
+
+Tolaria can show notes that link to the current note. Neighborhood mode pivots
+the note list around one note and groups related notes by outgoing and inverse
+relationships.

@@ -1,0 +1,63 @@
+---
+title: Save Web Resources
+description: Capture links and source material so they can become useful project context.
+sidebar:
+  order: 4
+video:
+  title: How I Save Web Resources in Tolaria
+  url: https://www.loom.com/share/8a3c1776f801402ebbf4d7b0f31e9882
+  embedUrl: https://www.loom.com/embed/8a3c1776f801402ebbf4d7b0f31e9882
+sourceRefs:
+  - label: Web resources Loom
+    url: https://www.loom.com/share/8a3c1776f801402ebbf4d7b0f31e9882
+  - label: Tolaria editor starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/tolaria-editor.md
+lastReviewed: 2026-04-30
+---
+
+import VideoEmbed from '../../../components/VideoEmbed.astro';
+
+<VideoEmbed
+  title="How I Save Web Resources in Tolaria"
+  url="https://www.loom.com/share/8a3c1776f801402ebbf4d7b0f31e9882"
+  embedUrl="https://www.loom.com/embed/8a3c1776f801402ebbf4d7b0f31e9882"
+/>
+
+Web resources become valuable when they are connected to work, not when they are
+perfectly clipped.
+
+## Create a Resource Note
+
+Use a simple Markdown note:
+
+```yaml
+---
+type: Note
+url: https://example.com/source
+related_to:
+  - "[[project-name]]"
+---
+
+# Source title
+
+Why this matters:
+
+- ...
+```
+
+## Capture the Decision Context
+
+Add a short note about why you saved the resource. A future AI agent can read the
+URL, but it cannot infer your reason for caring unless you write it down.
+
+Useful prompts:
+
+- What question did this help answer?
+- Which project or topic does it support?
+- What should I do with it next?
+- What claim, quote, or example matters?
+
+## Connect Before You Forget
+
+If the resource supports current work, link it immediately to a Project, Topic,
+Person, or Procedure. If you do not know yet, let it sit in the Inbox until review.

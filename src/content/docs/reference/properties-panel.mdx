@@ -1,0 +1,42 @@
+---
+title: Properties Panel
+description: Reference for frontmatter editing, type-aware controls, and relationships.
+sidebar:
+  order: 4
+sourceRefs:
+  - label: Properties panel starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/the-properties-panel.md
+  - label: Abstractions docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ABSTRACTIONS.md
+lastReviewed: 2026-04-30
+---
+
+The Properties panel is the user-friendly editor for YAML frontmatter.
+
+<figure className="product-shot">
+  <img src="/tolaria-docs/assets/starter/1776441635173-CleanShot_2026-04-17_at_17.58.11_2x.png" alt="Tolaria properties panel screenshot" />
+</figure>
+
+## Common Properties
+
+- `type`: the note type.
+- `status`: lifecycle state.
+- `url`: external source link.
+- `date`, `start_date`, `end_date`: date metadata.
+- `belongs_to`, `related_to`, `has`: relationship fields.
+- `icon`: per-note icon.
+
+## Relationship Editing
+
+Any frontmatter field containing wikilinks becomes a relationship. The Properties
+panel presents those values as navigable links.
+
+## Type-Aware Controls
+
+Tolaria can render different controls for text, numbers, dates, status fields,
+tags, URLs, icons, and wikilink relationships.
+
+## System Properties
+
+Fields beginning with `_` are Tolaria-managed system properties. They are hidden
+from normal property surfaces but remain visible in raw Markdown.

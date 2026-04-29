@@ -1,0 +1,49 @@
+---
+title: Use AI With Your Vault
+description: Let AI agents read and edit Tolaria vaults without giving up file ownership.
+sidebar:
+  order: 6
+sourceRefs:
+  - label: Tolaria AI starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/tolaria-ai.md
+  - label: Tolaria README AI setup
+    url: https://github.com/refactoringhq/tolaria
+  - label: AI architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+lastReviewed: 2026-04-30
+---
+
+Tolaria is AI-ready because the vault is already a readable codebase: Markdown
+files, YAML frontmatter, links, attachments, and Git history.
+
+## Start Without Integration
+
+You can point an AI assistant at the vault folder and ask it to read or edit notes.
+The starter vault includes an `AGENTS.md` file that explains Tolaria conventions
+for note types, wikilinks, frontmatter, saved views, and filenames.
+
+## Use Quick Prompt Mode
+
+Open the command palette and enter quick prompt mode for small questions. Add
+wikilinks when you want to pass specific note context.
+
+## Use the AI Panel
+
+The AI panel supports longer sessions with a selected CLI agent. Tolaria can work
+with supported local tools such as Claude Code, Codex CLI, and Gemini CLI when
+they are installed and signed in on your machine.
+
+<figure className="product-shot">
+  <img src="/tolaria-docs/assets/official/Ai chat 3.png" alt="Tolaria AI panel screenshot" />
+</figure>
+
+## Keep Git in the Loop
+
+AI edits are easier to trust when Git is active. Before and after agent work:
+
+1. Check the bottom bar for pending changes.
+2. Review diffs.
+3. Commit useful changes.
+4. Revert or rewrite changes that do not fit.
+
+This keeps AI as a collaborator, not an invisible owner of the vault.

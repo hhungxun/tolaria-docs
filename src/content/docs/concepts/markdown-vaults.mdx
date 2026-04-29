@@ -1,0 +1,52 @@
+---
+title: Markdown Vaults
+description: Understand Tolaria's filesystem-first document model.
+sidebar:
+  order: 2
+sourceRefs:
+  - label: Architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+  - label: Abstractions docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ABSTRACTIONS.md
+lastReviewed: 2026-04-30
+---
+
+A Tolaria vault is a folder. The filesystem is the source of truth.
+
+## Three Representations
+
+Tolaria works with the same data in three forms:
+
+- **Filesystem**: Markdown files and attachments on disk.
+- **Cache**: a rebuildable index for faster app startup.
+- **React state**: the current session's in-memory view.
+
+If those ever disagree, the filesystem wins.
+
+## File Layout
+
+```text
+vault/
+  my-note.md
+  project-alpha.md
+  attachments/
+  type/
+    project.md
+    topic.md
+  views/
+    active-projects.yml
+```
+
+Most notes live at the vault root. Type definitions live in `type/`. Saved views
+live in `views/`. Attachments and other non-note files stay normal vault files.
+
+## Markdown Compatibility
+
+Tolaria's rich editor writes Markdown. Raw mode lets you inspect and edit the
+exact file text when precision matters.
+
+## Git Is a Capability
+
+A vault can be Git-backed or a plain folder. Markdown scanning, editing, search,
+and navigation work either way. Git-backed vaults add history, commits, sync,
+conflict resolution, and AutoGit.

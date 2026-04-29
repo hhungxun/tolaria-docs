@@ -1,0 +1,64 @@
+---
+title: Vault Format
+description: File and folder conventions for a Tolaria vault.
+sidebar:
+  order: 7
+sourceRefs:
+  - label: Abstractions docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ABSTRACTIONS.md
+  - label: Starter AGENTS.md
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/AGENTS.md
+lastReviewed: 2026-04-30
+---
+
+Tolaria vaults are ordinary folders.
+
+## Recommended Layout
+
+```text
+vault/
+  AGENTS.md
+  CLAUDE.md
+  project-alpha.md
+  topic-markdown.md
+  person-alex.md
+  attachments/
+  type/
+    project.md
+    topic.md
+    person.md
+  views/
+    active-projects.yml
+```
+
+## Notes
+
+Each Markdown note should have one primary H1:
+
+```md
+---
+type: Topic
+status: Active
+---
+
+# Markdown Vaults
+```
+
+## Type Definitions
+
+Type definition notes live in `type/` and use `type: Type`.
+
+## Saved Views
+
+Saved views live in `views/*.yml`.
+
+## Attachments
+
+Attachments are normal vault files. Tolaria can preview supported image and PDF
+files and can open files in the system default app after validating the path is
+inside the active vault.
+
+## Filenames
+
+Prefer kebab-case filenames. Stable filenames make wikilinks and Git history
+easier to read.

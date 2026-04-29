@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  embedUrl: string;
+}
+
+const { title, url, embedUrl } = Astro.props;
+---
+
+<figure>
+  <div class="video-frame">
+    <iframe
+      src={embedUrl}
+      title={title}
+      allow="fullscreen; picture-in-picture"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <figcaption class="video-fallback">
+    If the embed does not load, open the walkthrough on
+    <a href={url} target="_blank" rel="noreferrer">Loom</a>.
+  </figcaption>
+</figure>

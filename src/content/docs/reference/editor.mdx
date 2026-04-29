@@ -1,0 +1,49 @@
+---
+title: Editor
+description: Reference for writing, raw mode, wikilinks, filenames, and note actions.
+sidebar:
+  order: 3
+sourceRefs:
+  - label: Editor starter note
+    url: https://github.com/refactoringhq/tolaria-getting-started/blob/main/tolaria-editor.md
+  - label: Editor architecture docs
+    url: https://github.com/refactoringhq/tolaria/blob/main/docs/ARCHITECTURE.md
+lastReviewed: 2026-04-30
+---
+
+The editor is where the current file is read and changed.
+
+<figure className="product-shot">
+  <img src="/tolaria-docs/assets/official/Block editor.png" alt="Tolaria block editor screenshot" />
+</figure>
+
+## WYSIWYG Mode
+
+The default mode is a rich Markdown editor. It supports formatted text, lists,
+quotes, code blocks, slash commands, images, wikilinks, math, Mermaid diagrams,
+and other Markdown-compatible structures.
+
+## Raw Mode
+
+Raw mode shows the exact file text. Use it when you need precise Markdown,
+frontmatter, or formatting control.
+
+## H1 and Filename Sync
+
+The first H1 heading is the preferred display title. New notes can sync the H1 to
+the filename. After the first sync, Tolaria asks before renaming again.
+
+## Wikilinks
+
+Type `[[` to open wikilink autocomplete. Wikilinks can point to filenames or
+note titles and can include display text.
+
+```md
+[[project-alpha]]
+[[project-alpha|Project Alpha]]
+```
+
+## Breadcrumb Bar
+
+The breadcrumb bar holds note-level actions such as favorite, organized state,
+raw mode, diff mode, properties, and AI panel toggles.
